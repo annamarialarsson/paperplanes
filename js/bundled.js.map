@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "bundled.js",
+  "sources": [
+    "src/js/vendors/1__jquery-1.11.2.min.js",
+    "src/js/scripts.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;AACA;AACA;AACA;AACA;;ACJA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA"
+}

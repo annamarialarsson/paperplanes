@@ -1,0 +1,131 @@
+@charset "UTF-8";
+// SETTINGS
+// -> Grid and font settings, variables, mixins and useful css-classes
+//==============================================================================================================
+
+// 1.1 	LAYOUT: MEDIAQUERIES BREAKPOINTS + CUSTOM WIDTHS (PX)
+// 1.2 	LAYOUT: GRID-GUTTERS (PX)
+// 2. 	BODY BASE-TYPE + UNIQUE BODY-SIZE WITHIN EACH MEDIAQUERY (PX) + MISC TYPESIZES
+// 3. 	FONTS
+// 4. 	COLORS (http://colorschemedesigner.com/)
+// 5. 	MISC VARS
+
+//==============================================================================================================
+
+// 1.1 -----------------------------------------------------------------------------------------------------------
+
+$beta_screen: 768; // (Use as variable: "$beta_query")
+$charlie_screen: 1025; // (Use as variable: "$charlie_query")
+$delta_screen: 1440; // (Use as variable: "$delta_query")
+$echo_screen: 1880; // (Use as variable: "$echo_query")
+$max_width: 980; // (Use as variable: "$containerwidth")
+
+// Decreased maxwidth
+$width_decr: 62.5%; // (Use as HTML-class, added to l-container: "decr-mw")
+$max_width_decr: 7em; // (Use as HTML-class, added to l-container: "decr-mw")
+
+// Increased maxwidth
+$max_width_incr: 1200px; // (Use as HTML-class, added to l-container: "incr-mw")
+
+//WIDTH DEFINITIONS ==============================================================================================================
+
+$spanwidth-1:  8.33%;
+$spanwidth-2:  16.66%;
+$spanwidth-3:  25%;
+$spanwidth-4:  33.33%;
+$spanwidth-5:  41.66%;
+$spanwidth-6:  50%;
+$spanwidth-7:  58.33%;
+$spanwidth-8:  66.66%;
+$spanwidth-9:  75%;
+$spanwidth-10: 83.33%;
+$spanwidth-11: 91.66%;
+$spanwidth-12: 100%;
+
+
+// 1.2 -----------------------------------------------------------------------------------------------------------
+
+$alpha_gutter: 20; // (Use as variable: "$gutter_alpha" and "$gutter_alpha_half")
+$beta_gutter: 30; // Use as variable: "$gutter_beta" and "$gutter_beta_half")
+$charlie_gutter: 30; // (Use as variable: "$gutter_charlie" and "$gutter_charlie_half")
+$delta_gutter: 30; // (Use as variable: "$gutter_delta" and "$gutter_delta_half")
+$echo_gutter: 30; // (Use as variable: "$gutter_echo" and "$gutter_echo_half")
+
+// 2 -----------------------------------------------------------------------------------------------------------
+
+$basefont: 18;
+$body_leading: 28; // (Use as variable: "$leading")
+
+// -- 
+
+$beta_basefontsize: 16;
+$charlie_basefontsize: 16;
+$delta_basefontsize:16;
+$echo_basefontsize: 16;
+
+// --
+
+$inputfontsize: 21;
+$inputheight: 60; // used for input type="submit" aka .a-btn as well
+$btnfontsize: 18;
+
+// 3 -----------------------------------------------------------------------------------------------------------
+
+$bodyfont: 'Lato', sans-serif;
+$captionfont-1: 'Lato', sans-serif;
+$captionfont-2: sans-serif;
+$compfont: sans-serif;
+$wfl-fallbackfont: sans-serif;
+$icon-font: 'icomoon';
+
+// 4 -----------------------------------------------------------------------------------------------------------
+
+// Color scheme
+
+$body: #ffffff;
+$bodycolor: #000;
+
+$action: #2baa65; // green
+$accent-1: #00b9ee; // blue
+$accent-2: #343d51; // dark purple
+$accent-3: #7895d4; // light purple
+
+$subtle-text: #aaa;
+$subtle-bg: #aaa;
+
+//Gradients
+
+$startcolor_simple: $accent-1;
+$stopcolor_simple: $accent-2;
+
+$startcolor_multi: $accent-1;
+$secondcolor_multi: $action;
+$thirdcolor_multi: $accent-2;
+$stopcolor_multi: $accent-3;
+
+$gradient_nosupport: $accent-1;
+
+// Formborders + borders
+
+$border-1: rgba($accent-2, 0.3);
+$border-2: $accent-2;
+$inputbg: white;
+$input-text: #333;
+
+// Alerts
+
+$msg-ok: #308490;
+$msg-ok-bg: lighten($msg-ok, 50%);
+$msg-warning: #B94A48;
+$msg-warning-bg: #F2DEDE;
+$msg-active: $msg-ok-bg;
+$highlight: lighten($accent-1, 28%);
+
+
+// 5 -----------------------------------------------------------------------------------------------------------
+
+$rounded: 6px;
+
+
+// 6 -----------------------------------------------------------------------------------------------------------
+

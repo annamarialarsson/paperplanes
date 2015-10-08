@@ -1,0 +1,29 @@
+@charset "UTF-8";
+//VARIABLE-CALCULATIONS
+// -> Uses some _settings.less variables for calculations. Outputs more useful variables. No styling but math.
+//==============================================================================================================
+
+$leading: 				  ($body_leading/$basefont)+0em;
+
+$gutter_alpha_half:		  ($alpha_gutter / $basefont)/2+0em;
+$gutter_alpha:			  ($alpha_gutter / $basefont)+0em;
+$gutter_beta_half:		  ($beta_gutter / $beta_basefontsize)/2+0em;
+$gutter_beta:			  ($beta_gutter / $beta_basefontsize)+0em;
+$gutter_charlie_half:	  ($charlie_gutter / $charlie_basefontsize)/2+0em;
+$gutter_charlie:		  ($charlie_gutter / $charlie_basefontsize)+0em;
+$gutter_delta_half:		  ($delta_gutter / $delta_basefontsize)/2+0em;
+$gutter_delta:			  ($delta_gutter / $delta_basefontsize)+0em;
+$gutter_echo_half:		  ($echo_gutter / $echo_basefontsize)/2+0em;
+$gutter_echo:			  ($echo_gutter / $echo_basefontsize)+0em;
+
+$containerwidth: 		  $max_width+($echo_gutter*2)+0px;
+
+// UNCOMMENT TO SET MQ IN EMS -> $beta_query: 				($beta_screen / 16)+0em;
+// UNCOMMENT TO SET MQ IN EMS ->  $charlie_query: 		($charlie_screen / 16)+0em;
+// UNCOMMENT TO SET MQ IN EMS -> $delta_query:				($delta_screen / 16)+0em;
+// UNCOMMENT TO SET MQ IN EMS -> $echo_query:					($echo_screen / 16)+0em;
+
+$beta_query: 							    $beta_screen+0px;
+$charlie_query: 				    		$charlie_screen+0px;
+$delta_query:								$delta_screen+0px;
+$echo_query:							    $echo_screen+0px;

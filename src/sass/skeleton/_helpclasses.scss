@@ -1,0 +1,128 @@
+// EXTENDS & PLACEHOLDERS ===========================================================================================================
+
+.row{
+  margin-top: $leading;
+  margin-bottom: $leading;
+
+  @media all and (min-width: $beta_query) {
+    margin-top: $leading*2;
+    margin-bottom: $leading*2;
+  }
+
+  &.padded{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: $leading;
+    padding-bottom: $leading;
+
+    @media all and (min-width: $beta_query) {
+      padding-top: $leading*2;
+      padding-bottom: $leading*2;
+    }
+  }
+}
+
+.fullbleed{
+ @include fullbleed();
+}
+
+.colortheme-1{
+  color: white;
+  background-color: $accent-2;
+
+  .a-large{
+    color: white;
+  }
+
+  .a-inputText,
+  .a-textarea,
+  .a-btn{
+    border-color: transparent;
+  }
+
+  .span-theme-1{
+    color: $accent-3;
+  }
+}
+
+.colortheme-2{
+  font-family: $captionfont-2;
+  color: $accent-2;
+  background-color: $action;
+
+  .a-large{
+    // font-family: $captionfont-1;
+    color: $accent-2;
+    border-color: $accent-2;
+  }
+
+  a{
+    color: white;
+  }
+
+  .a-inputText,
+  .a-textarea,
+  .a-btn{
+    border-color: transparent;
+  }
+}
+
+.overlay{
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bodycolor;
+  background-color: rgba($bodycolor, 0.65);
+
+  &.gradient{
+    @include gradient(rgba($startcolor_multi,0.4), rgba($stopcolor_multi, 0.4), transparent);
+  }
+
+  .overlay__text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+//WIDTHS - for non-layout widths, e.g table cols and stuff
+.width1 {
+    width: $spanwidth-1;
+}
+.width2 {
+    width: $spanwidth-2;
+}
+.width3 {
+    width: $spanwidth-3;
+}
+.width4 {
+    width: $spanwidth-4;
+}
+.width5 {
+    width: $spanwidth-5;
+}
+.width6 {
+    width: $spanwidth-6;
+}
+.width7 {
+    width: $spanwidth-7;
+}
+.width8 {
+    width: $spanwidth-8;
+}
+.width9 {
+    width: $spanwidth-9;
+}
+.width10 {
+    width: $spanwidth-10;
+}
+.width11 {
+    width: $spanwidth-11;
+}
+.width12 {
+    width: $spanwidth-12;
+}

@@ -1,0 +1,258 @@
+@charset "UTF-8";
+// MIXINS & FUNCTIONS (prefixes removed since Grunt-setup uses Autoprefixer)
+//==============================================================================================================
+
+@mixin type-to-em( $fontsizepx: $basefont, $lineheightpx: $body_leading ) {
+  font-size: $fontsizepx / $basefont + 0em;
+  line-height: $lineheightpx / $fontsizepx;
+}
+
+@mixin type-to-vmin($pxFallback: 16, $vmin: 4, $lineheight: 1.5){
+  font-size: $pxFallback / 16 + 0em;
+  font-size: $vmin + 0vm;
+  font-size: $vmin + 0vmin;
+  line-height: $lineheight;
+}
+
+@mixin textColumnCount($count)
+{
+  column-count: 				$count;
+}
+
+@mixin textColumnGap($gap)
+{
+  column-gap: 				$gap;
+}
+
+@mixin textColumnBreak($when:always)
+{
+  column-break-before: $when;
+}
+
+@mixin truncate($width: 100%) {
+  width: $width;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  //-webkit-animation: $animations;
+  //-moz-animation:    $animations;
+  //-o-animation:      $animations;
+  animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+  //@-webkit-keyframes #{$animationName} {
+  //  @content;
+  //}
+  //@-moz-keyframes #{$animationName} {
+  //  @content;
+  //}
+  //@-o-keyframes #{$animationName} {
+  //  @content;
+  //}
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin swap_text_for_img($sizeX:0, $sizeY:0){
+  display: block;
+  text-indent: -9999px;
+  width: $sizeX+0px;
+  height: $sizeY+0px;
+  background: {
+    color: white;
+    size: $sizeX+0px $sizeY+0px;
+    repeat: no-repeat;
+    position: center center;
+  }
+}
+
+@mixin formText(){
+  @include type-to-em($inputfontsize,$inputheight);
+  font-family: $bodyfont;
+  width: 100%;
+  padding: 0 $body_leading/$inputfontsize+0em;
+  -webkit-font-smoothing: antialiased;
+  color: $input-text;
+  // text-rendering: optimizeLegibility;
+
+  &::-webkit-input-placeholder {
+    color: $subtle-text;
+  }
+
+  &:-moz-placeholder {
+    color: $subtle-text;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder {
+    color:  $subtle-text;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $subtle-text;
+  }
+
+  &.inline{
+    display: inline-block;
+    width: auto;
+  }
+}
+
+@mixin formBtn(){
+  display: block;
+  width: auto;
+  height: $inputheight+0px;
+  height: $inputheight/$basefont+0rem;
+  @include type-to-em($btnfontsize,$inputheight);
+  font-family: $captionfont-2;
+  padding-right: $alpha_gutter/$btnfontsize+0em;
+  padding-left:  $alpha_gutter/$btnfontsize+0em;
+  text-align: center;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: $inputbg;
+  background-color: $action;
+
+  @media all and (min-width: $beta_query) {
+    padding-right: $body_leading/$btnfontsize+0em;
+    padding-left: $body_leading/$btnfontsize+0em;
+  }
+
+  &.inline{
+    display: inline-block;
+    width: auto;
+  }
+
+  &.secondary{
+    color: $action;
+    border: 1px solid $action;
+    background-color: $body;
+  }
+}
+
+@mixin setIcon(){
+  position: absolute;
+  display: block;
+  z-index: 50;
+  line-height: 1;
+  font-family: $icon-font;
+  text-indent: 0;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin gradient($startcolor: $startcolor_simple, $stopcolor: $stopcolor_simple, $fallbackGradient: $gradient_nosupport){
+  background-color: $fallbackGradient;
+  background-image: linear-gradient(to bottom, $startcolor, $stopcolor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#{$startcolor}', EndColorStr='#{$stopcolor}');
+}
+
+@mixin multigradient($firstC: $startcolor_multi, $secondC: $secondcolor_multi, $thirdC: $thirdcolor_multi, $fourthC: $stopcolor_multi){
+  background-color: $thirdC;
+  background-image: linear-gradient(to bottom,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#{$firstC}', endColorstr='#{$fourthC}');
+}
+
+@mixin fullbleed($mq:bq){
+
+  @if $mq == 'aq' {
+    @media all and (max-width: $beta_query) {
+      margin-right: -$gutter_alpha;
+      margin-left: -$gutter_alpha;
+    }
+  }
+
+  @if $mq == 'bq' {
+    @media all and (max-width: $beta_query) {
+      margin-right: -$gutter_alpha;
+      margin-left: -$gutter_alpha;
+    }
+    @media all and (max-width: $charlie_query) {
+      margin-right: -$gutter_beta;
+      margin-left: -$gutter_beta;
+    }
+  }
+
+  @if $mq == 'cq' {
+    @media all and (max-width: $beta_query) {
+      margin-right: -$gutter_alpha;
+      margin-left: -$gutter_alpha;
+    }
+    @media all and (max-width: $charlie_query) {
+      margin-right: -$gutter_beta;
+      margin-left: -$gutter_beta;
+    }
+    @media all and (max-width: $delta_query) {
+      margin-right: -$gutter_charlie;
+      margin-left: -$gutter_charlie;
+    }
+  }
+
+  @if $mq == 'dq' {
+    @media all and (max-width: $beta_query) {
+      margin-right: -$gutter_alpha;
+      margin-left: -$gutter_alpha;
+    }
+    @media all and (max-width: $charlie_query) {
+      margin-right: -$gutter_beta;
+      margin-left: -$gutter_beta;
+    }
+    @media all and (max-width: $delta_query) {
+      margin-right: -$gutter_charlie;
+      margin-left: -$gutter_charlie;
+    }
+    @media all and (max-width: $echo_query) {
+      margin-right: -$gutter_delta;
+      margin-left: -$gutter_delta;
+    }
+  }
+
+  @if $mq == 'eq' {
+    @media all and (max-width: $beta_query) {
+      margin-right: -$gutter_alpha;
+      margin-left: -$gutter_alpha;
+    }
+    @media all and (max-width: $charlie_query) {
+      margin-right: -$gutter_beta;
+      margin-left: -$gutter_beta;
+    }
+    @media all and (max-width: $delta_query) {
+      margin-right: -$gutter_charlie;
+      margin-left: -$gutter_charlie;
+    }
+    @media all and (max-width: $echo_query) {
+      margin-right: -$gutter_delta;
+      margin-left: -$gutter_delta;
+    }
+    @media all and (min-width: $echo_query) {
+      margin-right: -$gutter_echo;
+      margin-left: -$gutter_echo;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// TRANSITIONS
+//==============================================================================================================¨
+
+.transitions{
+	
+  .example-transform{
+		transition: transform 0.2s ease-out;
+	}
+	
+	.js-medialoadEffect img{
+		transition: opacity 0.3s ease-out;
+	}
+	
+	.a-btn:focus{
+		transition-property: none;
+	}
+
+	.a-inputText{
+		transition: border-color 0.06s ease-out;
+	}
+	
+	p a,
+	.a-sitename,
+	.m-global-nav__a{
+		transition: all 0.06s ease-in-out;
+	}
+}
+
+
+
+// KEYFRAME ANIMATIONS: http://joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+//==============================================================================================================

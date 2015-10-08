@@ -1,0 +1,64 @@
+html{
+  font-size: $basefont/16*100+0%;
+  line-height: $body_leading/$basefont;;
+  box-sizing: border-box;
+}
+
+@media all and (min-width: $beta_query) {
+
+  html{
+    font-size: $beta_basefontsize/16*100+0%;
+  }
+}
+
+@media all and (min-width: $charlie_query) {
+
+  html{
+    font-size: $charlie_basefontsize/16*100+0%;
+  }
+}
+
+@media all and (min-width: $delta_query) {
+
+  html{
+    font-size: $delta_basefontsize/16*100+0%;
+  }
+}
+
+@media all and (min-width: $echo_query) {
+  html{
+    font-size: $echo_basefontsize/16*100+0%;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+  font-family: $bodyfont;
+  color: $bodycolor;
+  background: $body;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color : rgba(0,0,0,0.2);
+}
+
+a{
+  color: $action;
+  text-decoration: none;
+}
+
+em{
+  font-style: italic;
+}
+
+strong{
+  font-weight: 900;
+}
+
+p {
+  margin-top: $leading;
+  margin-bottom: $leading;
+}
