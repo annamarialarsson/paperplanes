@@ -33,8 +33,11 @@ strong{
 }
 
 .a-small{
-  font-family: $captionfont-2;
-  text-transform: uppercase;
+  @include type-to-em(20,26);
+  font-family: $captionfont-1;
+  font-weight: 700;
+  text-align: center;
+  padding-top: $leading/2;
 }
 
 .a-fineprint{
@@ -61,6 +64,7 @@ strong{
     padding: 0px 4px 0px 4px;
   }
 }
+
 
 //a[href^="http://"] {
 //  -ms-word-break: break-all;
@@ -134,6 +138,15 @@ img.forcewidth{
 .alignleft + .alignleft{
   padding-right: 0;
   padding-left: $gutter_alpha_half;
+}
+
+.a-diy-imageholder{
+  width: 100%;
+  padding-top: $leading*13;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 // FORMS ==============================================================================================================
