@@ -1,0 +1,142 @@
+/* ---------------------------------------------/
+* Gridview, Version: 1.0
+* ------ */
+
+
+// ATOMS
+// ===========================================================
+
+
+// MOLECULE
+// ===========================================================
+
+.m-gridview__item{
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-top: $leading;
+  margin-bottom: $leading;
+
+  @media all and (min-width: $beta_query) {
+    width: 50%;
+  }
+
+  @media all and (min-width: $charlie_query) {
+    width: 33%;
+  }
+
+//  @media all and (min-width: $delta_query) {
+//    width: 25%;
+//  }
+}
+
+// ORGANSIM
+// ===========================================================
+
+.o-gridview{
+ 
+
+  /* Clearfix
+  -------------------------*/
+  &:before,
+  &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+  *zoom: 1;
+
+  /* End clearfix
+  -------------------------*/
+
+  &.padded{
+    margin-right: -$gutter_alpha_half;
+    margin-left: -$gutter_alpha_half;
+
+    @media all and (min-width: $beta_query) {
+      margin-right: -$gutter_beta_half;
+      margin-left: -$gutter_beta_half;
+    }
+
+    @media all and (min-width: $charlie_query) {
+      margin-right: -$gutter_charlie_half;
+      margin-left: -$gutter_charlie_half;
+    }
+
+    @media all and (min-width: $delta_query) {
+      margin-right: -$gutter_delta_half;
+      margin-left: -$gutter_delta_half;
+    }
+
+    @media all and (min-width: $echo_query) {
+      margin-right: -$gutter_echo_half;
+      margin-left: -$gutter_echo_half;
+    }
+
+    .m-gridview__item{
+      padding-right: $gutter_alpha_half;
+      padding-left: $gutter_alpha_half;
+
+      @media all and (min-width: $beta_query) {
+        padding-right: $gutter_beta_half;
+        padding-left: $gutter_beta_half;
+      }
+
+      @media all and (min-width: $charlie_query) {
+        padding-right: $gutter_charlie_half;
+        padding-left: $gutter_charlie_half;
+      }
+
+      @media all and (min-width: $delta_query) {
+        padding-right: $gutter_delta_half;
+        padding-left: $gutter_delta_half;
+      }
+
+      @media all and (min-width: $echo_query) {
+        padding-right: $gutter_echo_half;
+        padding-left: $gutter_echo_half;
+      }
+    }
+
+    // ALPHA = 1 items before clearfloat
+
+    .m-gridview__item:nth-of-type(n+1){
+      clear: both;
+
+      @media screen and (min-width: $beta_query) {
+        clear: none;
+      }
+    }
+
+    // BETA = 2 items before clearfloat
+
+    .m-gridview__item:nth-of-type(2n+1){
+      @media screen and (min-width: $beta_query) {
+        clear: both;
+      } @media screen and (min-width: $charlie_query) {
+        clear: none;
+      }
+    }
+
+    // CHARLIE = 3 items before clearfloat
+
+    .m-gridview__item:nth-of-type(3n+1){
+      @media screen and (min-width: $charlie_query) {
+        clear: both;
+      } 
+      //@media screen and (min-width: $delta_query) {
+      //clear: none;
+      //}
+    }
+
+    // DELTA = 4 items before clearfloat
+
+   // .m-gridview__item:nth-of-type(4n+1){
+   //   @media screen and (min-width: $delta_query) {
+   //     clear: both;
+   //   } 
+   // }
+  }
+}
