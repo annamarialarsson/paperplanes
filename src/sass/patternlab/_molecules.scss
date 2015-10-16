@@ -23,10 +23,10 @@
 		font-size: 14px;
 		}	
 }
-// trodde jag kunde skriva såhär pga att jag ville att fineprint ska centreras i de lägena som det kommer efter en h3 i den diven. 
-// .m-diy-fineprint{
-// 	.a-diy-imageholder
-// 	.a-fineprint{
-// 		text-align: center;
-// 	}
-// }
+
+
+
+.m-preview-diy .a-fineprint{
+ 	text-align: center;
+ 	margin-top: $leading/2;
+ }
